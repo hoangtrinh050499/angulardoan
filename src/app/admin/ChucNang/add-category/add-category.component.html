@@ -1,0 +1,150 @@
+<!-- Table with panel -->
+
+<div style="height: 570px; float: left; width: 65%;" class="card card-cascade narrower" >
+
+    <!--Card image-->
+    <div id="table_color"
+      class="table_color view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+
+      <!-- <div class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <input type="text" placeholder="Search…" aria-label="Search">
+        <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button" style="color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+        </button>
+        </div> -->
+
+        <div class="">
+          <input style="width: 200px;" type="text" placeholder="Search…" aria-label="Search">
+          <button type="button" style="color: black;background-color: white; ">
+            <i class="fas fa-search" style="font-size: 15px; color: black;"></i>
+          </button>
+          </div>
+    
+        <div style="margin-right: 1%;">
+          <!-- <button style="color: white;" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+            <i class="fas fa-pencil-alt mt-0"></i>
+          </button> -->
+          <!-- <button style="color: white; " type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" (click)="this.deleteCategory()">
+            <i class="far fa-trash-alt mt-0" ></i>
+          </button> -->
+          <button style="color: white; background-color: darkblue;border-radius: 50%; border-color: white;margin-right: 5px;" type="button" class="cn btn-outline-white btn-rounded btn-sm px-2" (click)="this.deleteCategory()">
+            <i class="far fa-trash-alt mt-0"></i>
+          </button>
+        </div>
+
+        
+  
+    </div>
+    <!--/Card image-->
+
+  
+    <div class="px-4  trademark-scrollbar">
+  
+      <div class="table-wrapper ">
+        <!--Table-->
+        <table class="table table-hover mb-0">
+  
+          <!--Table head-->
+          <thead>
+            <tr>
+              <th>
+                <!-- <input class="form-check-input" type="checkbox" id="checkbox">
+                <label class="form-check-label" for="checkbox" class="mr-2 label-table"></label> -->
+                    ID
+              </th>
+              <th class="th-lg">
+                Name Category
+              </th>
+              <th class="th-lg">
+                <a style="color: black;">Title
+                </a>
+              </th>
+            </tr>
+          </thead>
+          <!--Table head-->
+  
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor=" let item of list "
+                (click)="checkrow(item)"
+                [class.table-click] = "item === catgory"
+                [routerLink] ="['/category']"
+            >
+                <td>{{item?.id}}</td>
+                <td>{{item?.namecategory}}</td>
+                <td>{{item?.titlecategory}} </td>
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
+      </div>
+  
+    </div>
+    
+  
+</div>
+  <!-- Table with panel -->
+<div style=" width: 34%; float: left; margin-left: 1%; text-align: center;font-family: Georgia, 'Times New Roman', Times, serif; ">
+    <form>
+        <h3>Category</h3>
+        <div class="mb-3">
+            <label class="form-label" style="float: left;">Name Category</label>
+            <input type="text" class="form-control" placeholder="Nhập thông tin" name="name" [(ngModel)]="this.catgory.namecategory">
+        </div>
+
+        <!-- <label style="float: left;" class="col-form-label col-sm-2 text-sm-right pt-sm-0">Title</label> -->
+      <!-- <br/> -->
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Title</mat-label>
+        <mat-select name = "title" [(ngModel)]="this.catgory.titlecategory">
+          <mat-option  *ngFor="let item of listtitle" [value]="item.title">{{item.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+               
+    
+
+      <button type="submit" class="btn btn-primary" (click)="Submit()">Submit</button>
+
+
+    </form>
+
+
+    <!-- <form>
+        <h3>Category</h3>
+        <div class="mb-3 row">
+            <label class="col-form-label col-sm-2 text-sm-right">Name category</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Nhập name category">
+            </div>
+        </div>
+        <fieldset class="mb-3">
+            <div class="row">
+                <label class="col-form-label col-sm-2 text-sm-right pt-sm-0">Radios</label>
+                <div class="col-sm-10">
+                    <label class="form-check">
+            <input name="radio-3" type="radio" class="form-check-input" checked>
+            <span class="form-check-label">Default radio</span>
+            </label>
+                                <label class="form-check">
+            <input name="radio-3" type="radio" class="form-check-input">
+            <span class="form-check-label">Second default radio</span>
+            </label>
+                                <label class="form-check">
+            <input name="radio-3" type="radio" class="form-check-input" disabled>
+            <span class="form-check-label">Disabled radio</span>
+            </label>
+                </div>
+            </div>
+             </fieldset>
+        <div class="mb-3 row">
+            <div class="col-sm-10 ml-sm-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form> -->
+
+</div>

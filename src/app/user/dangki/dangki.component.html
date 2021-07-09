@@ -1,0 +1,24 @@
+<h3 mat-dialog-title id="dialog_color">Đăng kí tài khoản</h3>
+<mat-dialog-content>
+    <mat-form-field  style="width: 100%;">
+        <mat-label>Họ tên của bạn</mat-label>
+        <input matInput name="name" value="" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field  style="width: 100%;">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" value=""  [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field  style="width: 100%;">
+        <mat-label>Số điện thoại của bạn</mat-label>
+        <input matInput name="sdt" value=""  [(ngModel)]="phone">
+    </mat-form-field>
+    <mat-form-field  style="width: 100%;">
+        <mat-label>Mật khẩu</mat-label>
+        <input matInput name="password" value="" [(ngModel)]="password">
+    </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-mini-fab type="button" class="btn btn-dark" style="color: white; background-color: rgb(230, 164, 144);border-color: darkgoldenrod; border-radius: 15px;
+                          width: 30%;height: 28px;font-size: 13px; " (click)="submit()">Đăng kí</button>
+</mat-dialog-actions>

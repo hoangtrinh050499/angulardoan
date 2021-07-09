@@ -1,0 +1,6 @@
+#dialog_color{
+    background-image: linear-gradient(to right, lightblue, darkblue);
+    color: white;
+    text-align: center;
+    /* height: 20%; */
+}

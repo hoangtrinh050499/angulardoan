@@ -1,0 +1,14 @@
+.products-table
+{
+    scrollbar-width: 1px;
+    overflow-y:scroll;
+    overflow-x: auto;
+    
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: lightgrey;
+    border-radius: 5px;
+}

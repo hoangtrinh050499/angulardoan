@@ -1,0 +1,77 @@
+.column_div{
+
+    column-count: 4;
+    column-gap: 1%;
+    column-width: 50%;
+}
+.column_taikhoan{
+  column-count: 2;
+}
+.column2 {
+  float: left;
+  width: 25%;
+}
+
+.column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear float khác sau các cột */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Bố cục linh hoạt: ba cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình 
+  có chiều rộng dưới 600px */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+.search-danhmuc{
+    
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: aliceblue;
+}
+.button-TKtatca{
+  margin-left: 35%;
+    margin-top: 3%;
+   background-color: rgb(236, 202, 188);
+   border-radius: 15px;
+   padding-left: 20px;
+   padding-right: 20px;
+   color: white;
+}
+
+.image-botton{
+  width: 100%;
+  
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: fit-content;
+  box-shadow: 5px 15px 25px 5px ;
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a:hover{
+  color: rgb(214, 173, 110);
+}

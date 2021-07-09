@@ -1,0 +1,137 @@
+<h3 mat-dialog-title id="dialog_color">Thông tin khách hàng</h3>
+<mat-dialog-content>
+	<div class="row">
+
+		<div class="col-md-9 col-xl-10" style="width: 100%;">
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="account" role="tabpanel">
+
+					<div class="card">
+						<div class="card-body">
+							<form>
+								<div class="row">
+									<!-- <div class="col-md-8">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputUsername">Username</label>
+                                            <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputUsername">Password</label>
+                                            <textarea rows="2" class="form-control" id="inputBio" placeholder="Tell something about yourself"></textarea>
+                                        </div>
+                                    </div> -->
+									<div class="col-md-4" style="text-align: center;">
+										<div class="text-center" >
+											<img alt="Charles Hall" src="../assets/img/avatars/{{data.emp.image}}" class="rounded-circle img-responsive mt-2" width="128" height="128" />
+											 
+											 <!-- <input type="file" > -->
+
+											<div class="mt-2">
+												<!-- <input class="btn btn-primary" (click)="onFileSelected($event)"><i class="fas fa-upload" ></i> -->
+												<!-- <input type="file" (change)="onFileSelected($event)"> -->
+											</div>
+											<small>For best results, use an image at least 128px by 128px in .jpg format</small>
+										</div>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+
+					<div class="card">
+						<div class="card-header">
+
+							<h5 class="card-title mb-0">Private info</h5>
+						</div>
+						<div class="card-body">
+							<form>
+								<div class="row">
+									<div class="mb-3 col-md-4" style="width: 50%; float: left;">
+										<!-- <label class="form-label" for="inputFirstName">First name</label>
+										<input type="text" class="form-control" id="inputFirstName" placeholder="First name" > -->
+										<mat-form-field>
+											
+										<mat-label>First name</mat-label>
+										<input matInput name="firstname" [(ngModel)] ="data.emp.firstname">
+										</mat-form-field>
+										
+									</div>
+									<div class="mb-3 col-md-2" style="width: 50%; float: left;">
+										<!-- <label class="form-label" for="inputLastName">Last name</label>
+										<input type="text" class="form-control" id="inputLastName" placeholder="Last name"> -->
+										<mat-form-field>
+											
+											<mat-label>Last name</mat-label>
+											<input matInput name="lastname" [(ngModel)]="data.emp.lastname">
+											</mat-form-field>
+									</div>
+								</div>
+								
+								<div class="row">
+									<!-- <label class="form-label" for="inputEmail4">Date</label> -->
+                                    <div class="mb-3 col-md-6" style="width: 50%; float: left;">
+									
+									<!-- <input type="email" class="form-control" id="inputEmail4" placeholder="year/month/day"> -->
+
+										<mat-form-field>	
+											<mat-label>month/day/year</mat-label>
+											<input type="text" matInput [matDatepicker]="picker" name="date" [(ngModel)]="data.emp.date">
+											<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+											<mat-datepicker #picker></mat-datepicker>
+										</mat-form-field>
+									</div>
+								</div> 
+								
+
+								<div class="mb-3">
+									<!-- <label class="form-label" for="inputAddress">Address</label>
+									<input type="text" class="form-control" id="inputAddress" placeholder="Address"> -->
+									<mat-form-field style="width: 100%;">
+		
+										<mat-label>Address</mat-label>
+										<input matInput name="address" [(ngModel)]="data.emp.address">
+										</mat-form-field>
+								</div>
+								<div class="mb-3">
+									<!-- <label class="form-label" for="inputAddress">Phone</label>
+									<input type="text" class="form-control" id="inputAddress" placeholder="Number phone"> -->
+									<mat-form-field style="width: 100%;">
+											
+										<mat-label>Phone</mat-label>
+										<input matInput name="phone" [(ngModel)]="data.emp.phone">
+										</mat-form-field>
+								</div>
+								<!-- <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label" for="inputCity">City</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="mb-3 col-md-4">
+                                        <label class="form-label" for="inputState">State</label>
+                                        <select id="inputState" class="form-control">
+											<option selected>Choose...</option>
+											<option>...</option>
+										</select>
+                                    </div>
+                                    <div class="mb-3 col-md-2">
+                                        <label class="form-label" for="inputZip">Zip</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div> -->
+							</form>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-mini-fab [mat-dialog-close]="data" cdkFocusInitial (click)="onSubmit()" [routerLink]='["/employee"]'>Save</button>
+    <button mat-button (click)= "onCancle()" [routerLink]='["/employee"]'>Cancle</button>
+</mat-dialog-actions>

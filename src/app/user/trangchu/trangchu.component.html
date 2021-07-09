@@ -1,0 +1,558 @@
+
+        <!-- Top bar Start -->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        support@email.com
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        +012-345-6789
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top bar End -->
+        
+        <!-- Nav Bar Start -->
+
+        <div class="bottom-bar" style="background-color: black;">
+          <div class="container-fluid">
+              <div class="row align-items-center">
+                  <div class="col-md-3">
+                      <!-- <div class="logo">
+                          <a routerLink="/hnskincare.vn">
+                              <img src="./assets/img/logo.png" alt="Logo">
+                          </a>
+                      </div> -->
+                  </div>
+                  <div class="col-md-6">
+
+                      <div class="search" >
+                          <input type="text" placeholder="Search">
+                          <button><i class="fa fa-search"></i></button>
+                      </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="user">
+                        <a class="btn wishlist" style="background-color: black;border-color: black;">
+                          <button type="button" class="btn btn-dark" style="color: darkgoldenrod; background-color: black;border-color: darkgoldenrod; border-radius: 15px;
+                          height: 28px;font-size: 13px;
+                        ">Theo dõi đơn hàng</button>
+                        </a>
+                        <a class="btn cart" style="background-color: black;border-color: black; ">
+                          <div class="nav-item dropdown">
+                              
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white; font-size: 13px;">Tài khoản</a>
+                            <div class="dropdown-menu" style="font-size: 13px;">
+                     
+
+                              <div class="row column_taikhoan">
+                              <div class="column2" ><i class="fas fa-sign-in-alt" style="color: black;"></i></div> 
+                                <a class="column2" style="color: black;" (click)="login()" >{{this.dangnhap}}</a>
+    
+                              </div>
+
+
+
+
+                              <div class="row column_taikhoan">
+                                <div class="column2"><i class="fas fa-sign-out-alt" style="color: black;"></i></div>
+            
+                                <a class="column2" style="color: black;" (click)="dangki()">Đăng kí</a>
+                                
+                              </div>
+
+                              <div class="row column_taikhoan">
+                                <div class="column2"><i class="fas fa-user-alt" style="color: black;"></i></div>
+            
+                                <a  class="dropdown-item" style="color: black;" class="column2" routerLink="/taikhoan">Tài khoản</a>
+                                
+                              </div>
+
+                              <div class="row column_taikhoan">
+                                <div class="column2"><i class="fas fa-clipboard-list" style="color: black;"></i></div>
+            
+                                <a  class="dropdown-item" style="color: black;" class="column2">Đơn hàng</a>
+                                
+                              </div>
+
+                                
+                                
+                       
+                            </div>
+                     
+              
+                            
+                          </div>
+                        </a>
+
+                        <!-- <hr style="height: 0.02px;"/> -->
+
+                        
+
+
+                    </div>
+                </div>
+          </div>
+      </div>
+
+        <!-- <div class="nav" >
+            <div class="container-fluid" style="background-color: black;">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse" style="background-color: black;">
+                        <div class="navbar-nav mr-auto">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="product-list.html" class="nav-item nav-link">Products</a>
+                            <a href="product-detail.html" class="nav-item nav-link">Product Detail</a>
+                            <a href="cart.html" class="nav-item nav-link">Cart</a>
+                            <a href="checkout.html" class="nav-item nav-link">Checkout</a>
+                            <a href="my-account.html" class="nav-item nav-link">My Account</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
+                                <div class="dropdown-menu">
+                                    <a href="wishlist.html" class="dropdown-item">Wishlist</a>
+                                    <a href="login.html" class="dropdown-item">Login & Register</a>
+                                    <a href="contact.html" class="dropdown-item">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+
+                  
+
+                        <div class="navbar-nav ml-auto">
+
+                          <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                              <button type="button" class="btn btn-dark" style="color: darkgoldenrod; background-color: black;border-color: darkgoldenrod; border-radius: 15px;
+                                height: 28px;
+                              ">Theo dõi đơn hàng</button>
+                            </div>
+                          </div>
+                            <div class="nav-item dropdown">
+                              
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Login</a>
+                                    <a href="#" class="dropdown-item">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div> -->
+        <!-- Nav Bar End -->  
+        
+        
+
+
+        
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar" style="background-color: black;">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a routerLink="/hnskincare.vn">
+                                <img src="./assets/img/logo.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="col-md-6">
+
+                        <nav class="navbar navbar-expand-md">
+                          <!-- <a href="#" class="navbar-brand">MENU</a>
+                      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                      </button> -->
+                          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                              <div class="navbar-nav mr-auto">
+
+                                <div class="nav-item dropdown">
+                                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">Sản phẩm</a>
+                                  <div class="dropdown-menu" style="width: 100%;">
+
+                                    <div *ngFor="let item of listtitlecategory" >
+              
+                                      <ul style="text-align: left; list-style-type: none; color: black;" >
+                                        <b>{{item.title}}</b>
+                                     </ul>
+                                      <ul (click)="checkrow(item)" style="text-align: left; list-style-type: none; line-height: 2; color: black; margin-left: 4%;">
+                                        <li class="sidebar-item" *ngFor="let it of item.category" ><a >{{it.namecategory}}</a></li>
+                                     </ul>
+                                    </div>
+
+
+                                      <!-- <a href="wishlist.html" class="dropdown-item">Wishlist</a>
+                                      <a href="login.html" class="dropdown-item">Login & Register</a>
+                                      <a href="contact.html" class="dropdown-item">Contact Us</a> -->
+                                  </div>
+                                </div>
+
+                                <div class="nav-item dropdown" style="margin-left: 6%;">
+                                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">Vấn Đề Da</a>
+                                  <div class="dropdown-content" >
+                                      <a class="dropdown-item  " *ngFor="let item of listskintype" (click) = "vandeda(item.id)" [routerLink] ="['/vandeda']" [queryParams]="{id: item.id}"
+                                        
+                                       >{{item.title}}</a>
+                                      <!-- <select class="dropdown-item"><option  *ngFor="let item of listskintype" value = 'item'>{{item.title}}</option></select> -->
+                                    </div>
+                                </div>
+
+
+                                <div class="nav-item dropdown" style="margin-left: 6%;">
+                                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;" >Thành phần dưỡng da</a>
+                                  <div class="dropdown-content" >
+                                      <a class="dropdown-item" *ngFor="let item of listcomposition" (click)="thanhphanda(item.id)" [routerLink]="['/thanhphan']"  [queryParams]="{id: item.id}">{{item.nameComposition}}</a>
+                        
+                                  </div>
+                                </div>
+         
+                                <div class="nav-item dropdown" style="margin-left: 6%;">
+                                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">Hàng chính hãng</a>
+                                  <div class="dropdown-content" >
+                                      <a  class="dropdown-item" *ngFor="let item of listtrademark" (click)="thuonghieu(item.id)" [routerLink]="['/thuonghieu']"  [queryParams]="{id: item.id}">{{item.nametrademark}}</a>
+                             
+                                  </div>
+                                </div>
+
+
+                              </div>
+                          </div>
+                      </nav>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a  class="btn wishlist" style="background-color: black;border-color: black;">
+                                <i class="fa fa-heart" style="color: white;"><span class="badge rounded-pill badge-notification" style="background-color: red; color: white;width: fit-content;height: fit-content;">{{this.yeuthich}}</span></i>
+                                
+                            </a>
+
+                            <!-- <a [routerLink]="['/giohang']" routerLinkActive="router-link-active"  class="btn cart" style="background-color: black;border-color: black; ">
+                                <i class="fa fa-shopping-cart" style="color: white;"></i>
+                                <span>({{this.sumsl}})</span>
+                                <span class="badge rounded-pill  badge-notification" style="margin-left: 5%;margin-top: 5%; width: 16%;height: 20%; background-color: red; ">20%</span>
+                            </a> -->
+
+                                                      
+                          <a [routerLink]="['/giohang']" routerLinkActive="router-link-active"  class="btn cart" style="background-color: black;border-color: black; ">
+                            <i class="fa fa-shopping-cart" style="color: white;"><span class="badge rounded-pill badge-notification" style="background-color: red; color: white;width: fit-content;height: fit-content;">{{this.sumsl}}</span></i>
+                            
+                          </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End -->   
+        
+        <div style="margin-top: -1;">
+          <router-outlet ></router-outlet>
+        </div>
+
+
+    
+
+   
+
+        <!-- Footer -->
+        <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+          <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+        
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="fab fa-twitter"></i
+              ></a>
+        
+              <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                  ><i class="fab fa-google"></i
+                ></a>
+          
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+          
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+          
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </section>
+              <!-- Section: Social media -->
+          
+              <!-- Section: Form -->
+              <section class="">
+                <form action="">
+                  <!--Grid row-->
+                  <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                      <p class="pt-2">
+                        <strong>Sign up for our newsletter</strong>
+                      </p>
+                    </div>
+                    <!--Grid column-->
+          
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                      <!-- Email input -->
+                      <div class="form-outline form-white mb-4">
+                        <input type="email" id="form5Example2" class="form-control" />
+                        <label class="form-label" for="form5Example2">Email address</label>
+                      </div>
+                    </div>
+                    <!--Grid column-->
+          
+                    <!--Grid column-->
+                    <div class="col-auto">
+                      <!-- Submit button -->
+                      <button type="submit" class="btn btn-outline-light mb-4">
+                        Subscribe
+                      </button>
+                    </div>
+                    <!--Grid column-->
+                  </div>
+                  <!--Grid row-->
+                </form>
+              </section>
+              <!-- Section: Form -->
+          
+              <!-- Section: Text -->
+              <section class="mb-4">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                  repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                  eum harum corrupti dicta, aliquam sequi voluptate quas.
+                </p>
+              </section>
+              <!-- Section: Text -->
+          
+              <!-- Section: Links -->
+              <section class="">
+                <!--Grid row-->
+                <div class="row">
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+          
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+          
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+          
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+          
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+          
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+          
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+          
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+              </section>
+              <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2020 Copyright:
+              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+          <!-- Footer -->
+
+
+
+
+
+
+
+
+<!--  Footer start
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Get in Touch</h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
+                                <p><i class="fa fa-envelope"></i>email@example.com</p>
+                                <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Follow Us</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Company Info</h2>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Purchase Info</h2>
+                            <ul>
+                                <li><a href="#">Pyament Policy</a></li>
+                                <li><a href="#">Shipping Policy</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>We Accept:</h2>
+                            <img src="img/payment-method.png" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-security">
+                            <h2>Secured By:</h2>
+                            <img src="img/godaddy.svg" alt="Payment Security" />
+                            <img src="img/norton.svg" alt="Payment Security" />
+                            <img src="img/ssl.svg" alt="Payment Security" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Footer End -->
+        
+        <!-- Footer Bottom Start -->
+        <!-- <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 copyright">
+                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                    </div>
+
+                    <div class="col-md-6 template-by">
+                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Footer Bottom End -->

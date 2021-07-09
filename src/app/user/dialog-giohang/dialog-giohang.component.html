@@ -1,0 +1,92 @@
+<div><b>Giỏ hàng</b></div>
+<div class="px-4  ">
+  
+    <div class="table-wrapper ">
+
+      <table class="table table-hover mb-0 ">
+        <thead>
+          <tr>
+            <th class="th-lg" style="width: 20%; align-items: center;">
+                <a >
+              
+            
+                </a>
+              </th>
+
+            <th class="th-lg" style="width: 20%; align-items: center;">
+              <a >
+                Tên sản phẩm
+              </a>
+            </th>
+            <th class="th-lg" style="width: fit-content; align-items: center;">
+              <a>
+                Giá
+
+              </a>
+            </th>
+            <th class="th-lg" style="width: fit-content; align-items: center;">
+              <a >
+                Số lượng
+              </a>
+            </th>
+            <th class="th-lg" style="width: fit-content; align-items: center;">
+              <a >
+                Total
+              </a>
+            </th>
+            <th class="th-lg" style="width: 0px; align-items: center;">
+              <a >
+            
+              </a>
+            </th>
+           
+          </tr>
+        </thead>
+        <tbody class="products-table">
+          <tr *ngFor="let item of array" 
+          >
+          <td><img src="../assets/img/imgdatn/{{item.pro.image}}" alt="" class="img-fluid rounded-circle mb-2" width="70" height="70" />
+          </td>
+              <td scope="row" style="font-size: 12px;">{{item.pro.nameproduct}}</td>
+              <td style="font-size: 13px;">{{item.pro.price}}</td>
+              
+              <td style="font-size: 13px;text-align:  center;">{{item.sl}}</td>
+              <td style="font-size: 13px;align-items: center;">{{item.sl*item.pro.price}}</td>
+              
+              <td style="font-size: 13px; align-items: center;">
+
+                <i class="fas fa-times"></i>
+                
+              </td>
+             
+          </tr>
+          <tr>
+            <td>
+            </td>
+                <td scope="row" style="font-size: 12px;"></td>
+                <td style="font-size: 13px;"></td>
+                
+                <td style="font-size: 13px;"><b>Tổng tiền</b></td>
+                <td style="font-size: 13px;align-items: center;">{{this.sum}}</td>
+                
+                <td style="font-size: 13px; align-items: center;"></td>
+            </tr>
+          
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+
+      
+
+    </div>
+
+  </div>
+
+  <!-- <div  style="margin-top: 2%; "><span style="float: right; margin-right: 5%;">Tổng tiền : {{this.sum}}</span></div>
+  <br/> -->
+  <div style="margin-top: 3%;">
+    <button matDialogClose style="width: 35%;float: left; background-color: black; color: white;"><i class="fas fa-long-arrow-alt-left" style="color: white;"></i> Tiếp tục mua hàng</button>
+    <button style="width: 35%;float: right;" routerLink="/giohang" matDialogClose>Tiến hành đặt hàng</button>
+  </div>
+  

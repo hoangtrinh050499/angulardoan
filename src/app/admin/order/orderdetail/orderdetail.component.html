@@ -1,0 +1,107 @@
+
+
+<div class="row products-table">
+    
+    <div class="col-12">
+        
+        <div class="card" >
+            <div class="card-body m-sm-3 m-md-5" style="align-items: center;" >
+                <div style="margin-left: 25%;">
+                    <h1 class="h3 mb-3">CHI TIẾT ĐƠN HÀNG</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-muted">Mã hóa đơn</div>
+                        <strong>{{this.data.dathangdetail.id}}</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-muted">Ngày lập hóa đơn :</div>
+                        <strong>{{this.data.dathangdetail.orderDate}}</strong>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <div class="text-muted">Ngày lập hóa đơn</div>
+                        <strong>{{this.data.imp.date}}</strong>
+                    </div> -->
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="text-muted">Thông tin khách hàng</div>
+                        <div>
+                            <div class="text-muted" style="float: left;">
+                                Tên khách hàng :  
+                            </div>
+                            <div style="float: left;">
+                                <strong> {{this.data.dathangdetail.cusdto.name}}</strong>
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            <div class="text-muted">
+                                Địa chỉ : 
+                            </div>
+                            <div style="float: left;">
+                                <strong>{{this.data.dathangdetail.cusdto.address}}</strong>
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            <div class="text-muted" >
+                                SĐT :
+                            </div>
+                            <div style="float: left;">
+                                <strong>{{this.data.dathangdetail.cusdto.phone}}</strong>
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            <div class="text-muted">
+                                Email : 
+                            </div>
+                            <div style="float: left;">
+                                <strong> {{this.data.dathangdetail.cusdto.email}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="px-4  products-table"> -->
+                <table class="table table-sm products-table  products-table" >
+                    <thead>
+                        <tr >
+                            <th>Image</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá bán</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let item of listdathangdetail">
+                            <td><img src="../assets/img/imgdatn/{{item.pro.image}}" alt="" class="img-fluid rounded-circle mb-2" width="50" height="50" />
+                            </td>
+                            <td>{{item.pro.nameproduct}}</td>
+                            <td class="text-right">{{item.sl}}</td>
+                            <td class="text-right">{{item.pro.price}}</td>
+                            <td class="text-right">{{item.sl * item.pro.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <!-- </div> -->
+                <div style="float: right;">
+                    Tổng tiền : {{this.data.dathangdetail.tongtien}}
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary">
+                        Print this receipt
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

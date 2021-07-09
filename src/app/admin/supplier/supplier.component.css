@@ -1,0 +1,29 @@
+.table-click{
+    background-color: lightgray;  
+  }
+  
+  
+  .trademark-scrollbar{
+      scrollbar-width: 1px;
+      overflow-y: scroll;
+  }
+  ::-webkit-scrollbar{
+      width: 5px;
+  }
+  ::-webkit-scrollbar-thumb{
+      background-color: lightgrey;
+      border-radius: 5px;
+  }
+  
+  table thead>tr>th{
+      position: sticky;
+      top:0px;
+      background-color: white;
+  }
+  .table_color{
+      background-image: linear-gradient(to right, lightblue, darkblue);
+  }
+  
+  
+  
+  

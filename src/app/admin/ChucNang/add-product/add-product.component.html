@@ -1,0 +1,337 @@
+<h3 mat-dialog-title id="dialog_color">Thông tin sản phẩm</h3>
+<mat-dialog-content>
+    <!-- <h1 class="h3 mb-3">Settings</h1> -->
+
+    <div class="row">
+        <div class="col-md-3 col-xl-2">
+             <div class="card">
+            </div>
+        </div>
+
+        <div class="col-md-9 col-xl-10" style="width: 100%;">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="account" role="tabpanel">
+
+                    <div >
+                        <div class="">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Main Image</h5>
+                                
+                            </div>
+                            <div class="card-body">
+                                
+                                <form>
+                                    <div class="row">
+                              
+                                        <div class="col-md-4">
+                                            <div class="text-center">
+                                                    <img alt="" src="{{this.path}}" class="rounded-circle img-responsive mt-2" width="128" height="128" />
+                                                <div class="mt-2">
+                                                     <!-- <input type="text" class="btn btn-primary" (click)="onFileSelected($event)"><i class="fas fa-upload" ></i> -->
+                                                    <input type="file" (change)="onFileSelected($event)"> 
+                                                 </div> 
+                                                <!-- <div class="form-group col-12">
+                                                    <input type="file"
+                                                    id="file"
+                                                    #userPhoto
+                                                    (change)="onFileSelected($event)"
+                                                    name="image"
+                                                    autocomplete="off"
+                                                    />
+                                                    
+                                                    </div> -->
+
+
+
+                                                <small>For best results, use an image at least 128px by 128px in .jpg format</small>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </form>
+    
+                            </div>
+                        </div>
+                        <div class="row" style=" background-color: lightgrey; height: 60%;" >
+                            <div class="card-body ">
+                                <form  >
+                                 
+                                    <img *ngFor="let item of imgarray" style="float: left;" alt="Charles Hall" [src]="item" class="rounded-circle img-responsive mt-2" width="80" height="80" (click)="Checkimage(item)"/>
+         
+                                </form>
+    
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+
+                            <h5 class="card-title mb-0">Product info</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <!-- <div class="row"> -->
+                                    <div class="row">
+                                        <mat-form-field  style="width: 100%;">
+                                            <mat-label>Name</mat-label>
+                                            <input matInput name="Name" [(ngModel)]="this.pro.nameproduct">
+                                        </mat-form-field>
+                                        
+                                    </div>
+
+                                    <p>Introduce</p>
+                                    <div class="row">
+                                        <!-- <mat-form-field  style="width: 100%;">
+                                            <mat-label>Introduce</mat-label>
+                                            <input type="text" matInput name="Introduce" [(ngModel)]="this.data.pro.introduce">
+                                        </mat-form-field> -->
+
+                                        <textarea style="width: 98%;height: 100px;margin-left: 2%;" name="Introduce" placeholder="Introduce" [(ngModel)]="this.pro.introduce"></textarea>
+                                        
+                                        
+
+                                    </div>
+
+                                    <p>Overview</p>
+                                    <div class="row">
+                                        <!-- <mat-form-field  style="width: 100%;">
+                                            <mat-label>Overview</mat-label>
+                                            <input matInput name="Overview" [(ngModel)]="this.data.pro.overview">
+                                        </mat-form-field> -->
+
+                                        <!-- <textarea style="width: 98%;height: 100px;margin-left: 2%;" name="Overview" placeholder="Overview" [(ngModel)]="this.data.pro.overview"></textarea> -->
+                                        <ckeditor name="Overview" [(ngModel)]="this.pro.overview">
+                                        </ckeditor>
+                                    </div>
+
+
+                                    <p>Detail composition</p>
+                                    <div class="row">
+                                        <!-- <mat-form-field  style="width: 100%;">
+                                            <mat-label>Detail composition</mat-label>
+                                            <input matInput name="detail" [(ngModel)]="this.data.pro.detailcomposition">
+                                        </mat-form-field>
+                                         -->
+
+                                         <ckeditor name="detail" [(ngModel)]="this.pro.detailcomposition">
+                                        </ckeditor>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <mat-form-field  style="width: 100%;">
+                                            <mat-label>Uses</mat-label>
+                                            <input matInput name="Uses" [(ngModel)]="this.pro.uses">
+                                        </mat-form-field>
+                                        
+                                    </div>
+
+                                    <div class="row">
+                                        <mat-form-field style="width: 48%;">
+                                            <mat-label>Barcode</mat-label>
+                                            <input matInput name="Barcode" [(ngModel)]="this.pro.barcode">
+                                        </mat-form-field>
+
+                                        <!-- <mat-form-field style="width: 47%; margin-left: 5%;">
+                                            <mat-label>Status</mat-label>
+                                            <input matInput name="Status" [(ngModel)]="this.data.pro.">
+                                        </mat-form-field> -->
+
+                                        <!-- <label class="form-label" for="inputLastName">Barcode</label>
+                                        <input type="text" class="form-control" id="inputLastName"> -->
+                                    </div>
+                                <!-- </div> -->
+                                <!-- <div class="mb-3">
+                                    <label class="form-label" for="inputEmail4">Status</label>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                </div> -->
+                                
+                                <div class="row">
+                                    <!-- <mat-form-field style="width: 30%;">
+                                        <mat-label>Composition</mat-label>
+                                        <input matInput name="Composition">
+                                    </mat-form-field> -->
+
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Composition</mat-label>
+                                        <mat-select multiple 
+                                         
+                                         name ="composition"   
+                                        (selectionChange) = "onchangeComposition($event.value)"          
+                                        >
+                                          <mat-option [value]="i" *ngFor="let i of listcomposition">{{i.nameComposition}}</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+
+                                 
+
+
+                                <div class="row column" style="width: 95%;">
+
+                                    <div class="column1">
+                                        <mat-form-field appearance="fill" style="width: 100%;">
+                                            <mat-label>Trademark</mat-label>
+                                            <mat-select
+                                              
+                                                name = "trademark"
+                                                (selectionChange)="onchangeTrademark($event.value)"      
+                                            >
+                                              <!-- <mat-option value=""></mat-option> -->
+                                              <mat-option *ngFor="let tra of listtrademark" [value]="tra">{{tra.nametrademark}}</mat-option>
+                                            </mat-select>
+                                          </mat-form-field>
+                                    </div>
+                                    
+                                
+                                    <div class="column1">
+                                        <mat-form-field appearance="fill" style="width: 100% ;">
+                                            <mat-label>Category</mat-label>
+                                            <mat-select
+                                            name = "category"
+                                            (selectionChange)="onchangeCategory($event.value)"     
+                                            >
+                                              <!-- <mat-option value=""></mat-option> -->
+                                              <mat-option *ngFor="let cate of listcategory" [value]="cate">{{cate.namecategory}}</mat-option>
+                                            </mat-select>
+    
+                                        </mat-form-field>
+                                    </div>
+
+                                    
+
+
+
+                                </div>
+
+
+
+
+
+
+                                    <!-- <div class="mb-3 col-md-6">
+                                        <label class="form-label" for="inputAddress">Composition</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                        
+                                        <mat-form-field style="width: 47%; margin-left: 5%;">
+                                            <mat-label>Status</mat-label>
+                                            <input matInput name="Status">
+                                        </mat-form-field>
+                                    
+                                    </div>
+                                    <div class="mb-3 col-md-4">
+                                        <label class="form-label" for="inputAddress2">Trademark</label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                    </div>
+                                    <div class="mb-3 col-md-2">
+                                        <label class="form-label" for="inputCity">Category</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div> -->
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label class="form-label" for="inputEmail4">Skintype</label>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email"> -->
+                                    <!-- <mat-form-field style="width: 100%">
+                                        <mat-label>Skintype</mat-label>
+                                        <input matInput name="Skintype">
+                                    </mat-form-field> -->
+                                    <mat-form-field appearance="fill" style="width: 100%;">
+                                        <mat-label>Skinytpe</mat-label>
+                                        <mat-select multiple 
+                                          
+                                            name="skintype"
+                                            (selectionChange)="onchangeSkintype($event.value)"      
+                                            
+                                        >
+                                          <mat-option *ngFor="let skin of listskintype" [value]="skin" >{{skin.title}}</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-mini-fab [mat-dialog-close] (click)="this.onSubmit()">Save</button>
+    <button mat-button [mat-dialog-close] (click)="this.onCancle()">Cancle</button>
+</mat-dialog-actions>
+
+
+
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+ 
+ <script>
+   // Your web app's Firebase configuration
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+   var firebaseConfig = {
+     apiKey: "AIzaSyB3QW9sf0IXEaMFw38okVHoYQrMegZwhQk",
+     authDomain: "webbanhang-2b22a.firebaseapp.com",
+     projectId: "webbanhang-2b22a",
+     storageBucket: "webbanhang-2b22a.appspot.com",
+     messagingSenderId: "647289819665",
+     appId: "1:647289819665:web:28a21adf22639981bc97b0",
+     measurementId: "G-NB7YZBT22W"
+   };
+   // Initialize Firebase
+   firebase.initializeApp(firebaseConfig);
+   firebase.analytics();
+ </script>
+ <script >
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click", function() {
+        function uploadimage() {
+    const ref = firebase.storage().ref();
+    const file = document.querySelector('#file').file[0];
+    const metadata ={
+        contentType : file.type
+    };
+    const name = file.name;
+    const uploadIMG = ref.child(name).put(file,metadata);
+    uploadIMG
+    .then(snapshot=>snapshot.ref.getDownloadURL())
+    .then(url => {
+        console.log(url);
+    })
+    .catch(console.error)
+
+    console.log("firebase");
+     }
+    }, false);  
+
+
+    //  $(document).ready(function () {
+    //  function uploadimage() {
+    // // const ref = firebase.storage().ref();
+    // // const file = document.querySelector('#file').file[0];
+    // // const metadata ={
+    // //     contentType : file.type
+    // // };
+    // // const name = file.name;
+    // // const uploadIMG = ref.child(name).put(file,metadata);
+    // // uploadIMG
+    // // .then(snapshot=>snapshot.ref.getDownloadURL())
+    // // .then(url => {
+    // //     console.log(url);
+    // // })
+    // // .catch(console.error)
+
+    // console.log("firebase");
+    //  }
+    // })
+ </script>

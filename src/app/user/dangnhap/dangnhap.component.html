@@ -1,0 +1,19 @@
+<h3 mat-dialog-title id="dialog_color">Đăng nhập tài khoản</h3>
+<mat-dialog-content>
+    <mat-form-field  style="width: 100%;">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="this.username">
+    </mat-form-field>
+    <mat-form-field  style="width: 100%;">
+        <mat-label>Password</mat-label>
+        <input matInput type="password"  name="password" [(ngModel)]="this.password">
+    </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    
+    <!-- <button  style="width: 30%; border-radius: 43%;"></button> -->
+    <button mat-button mat-mini-fab type="button" class="btn btn-dark" style="color: white; background-color: rgb(230, 164, 144);border-color: darkgoldenrod; border-radius: 15px;
+                          width: 30%;height: 28px;font-size: 13px;" (click)="onSubmit()" [mat-dialog-close]="true">Đăng nhập</button>
+    <button mat-button >Quên mật khẩu?</button>
+</mat-dialog-actions>

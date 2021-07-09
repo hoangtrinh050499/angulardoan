@@ -1,0 +1,114 @@
+<!-- Table with panel -->
+
+<div style="height: 570px; float: left; width: 65%;" class="card card-cascade narrower" >
+
+    <!--Card image-->
+    <div id="table_color"
+      class="table_color view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+
+      <!-- <div class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <input type="text" placeholder="Search…" aria-label="Search">
+        <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button" style="color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+        </button>
+        </div> -->
+
+        <div class="">
+          <input style="width: 200px;" type="text" placeholder="Search…" aria-label="Search">
+          <button type="button" style="color: black;background-color: white; ">
+            <i class="fas fa-search" style="font-size: 15px; color: black;"></i>
+          </button>
+          </div>
+      
+        <div style="margin-right: 1%;">
+          <button style="color: white; background-color: darkblue;border-radius: 50%; border-color: white;margin-right: 5px;" type="button" class="cn btn-outline-white btn-rounded btn-sm px-2" (click)="this.delete()">
+            <i class="far fa-trash-alt mt-0"></i>
+          </button>
+        </div>
+
+        
+  
+    </div>
+    <!--/Card image-->
+
+  
+    <div class="px-4  trademark-scrollbar">
+  
+      <div class="table-wrapper ">
+        <!--Table-->
+        <table class="table table-hover mb-0">
+  
+          <!--Table head-->
+          <thead>
+            <tr>
+              <th class="th-lg">
+                Name
+              </th>
+              <th class="th-lg">
+                Email
+              </th>
+              <th class="th-lg" style="width: 17%;">
+                <a style="color: black;">Phone
+                </a>
+              </th>
+              <th class="th-lg">
+                <a style="color: black;">Address
+                </a>
+              </th>
+            </tr>
+          </thead>
+          <!--Table head-->
+  
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor="let item of list"
+              (click) = "checkrow(item)"
+              [class.table_color] = "item === this.supplier"
+            >
+                <td>{{item.namesupplier}}</td>
+                <td>{{item.email}} </td>
+                <td>{{item.phone}} </td>
+                <td>{{item.address}} </td>
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
+      </div>
+  
+    </div>
+    
+  
+</div>
+  <!-- Table with panel -->
+<div style=" width: 34%; float: left; margin-left: 1%; text-align: center;font-family: Georgia, 'Times New Roman', Times, serif; ">
+    <form>
+        <h3>Supplier</h3>
+        <div class="mb-3">
+            <label class="form-label" style="float: left;">Name Supplier</label>
+            <input type="text" class="form-control" placeholder="Nhập thông tin" name="nameSupplier" [(ngModel)]="this.supplier.namesupplier">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" style="float: left;">Email Supplier</label>
+            <input type="text" class="form-control" placeholder="Nhập thông tin" name="nameEmail" [(ngModel)]="this.supplier.email">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" style="float: left;">Phone Supplier</label>
+            <input type="text" class="form-control" placeholder="Nhập thông tin" name="namePhone" [(ngModel)]="this.supplier.phone">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" style="float: left;">Address Supplier</label>
+            <textarea style="height: 170px ;"  class="form-control" placeholder="Nhập thông tin" name="nameAdddress" [(ngModel)]="this.supplier.address" ></textarea>
+        </div>
+      
+        
+                <button type="submit" class="btn btn-primary" (click)="Submit()">Submit</button>
+
+    </form>
+
+
+
+</div>

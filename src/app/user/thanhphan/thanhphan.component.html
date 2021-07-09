@@ -1,0 +1,109 @@
+<div style="height: 15%; width: 73%; margin-left: 14%;" >
+    <div style=" height: 92%;">
+        <div  style=" height: 92%;">
+            <div class="content" style="background-image: url(./assets/img/banner/banner_productlist.png);">{{this.composition}}</div>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="recent-product product" style="margin-top: 2%;">
+    <div class="container-fluid">
+  
+        <div class="row align-items-center product-slider product-slider-4">
+            
+            
+            <div  style="width: 100%;">
+  
+              <div style=" width: 20%; float: left; align-items: left;  margin-left: 9%;" >
+                
+                <ul style="text-align: left; list-style-type: none; color: black;" *ngFor="let item of listtitlecategory">
+                  <b>{{item.title}}</b>
+  
+                  <ul style="text-align: left; list-style-type: none; line-height: 2; color: black; ">
+                    <li class="sidebar-item" *ngFor="let it of item.category"  (click) = "checkcategory(it)" ><a >{{it.namecategory}}</a></li>
+                 </ul>
+               </ul>
+                
+              </div>
+  
+  
+                <div class ="row" style=" float : left;width: 60%; margin-left: 2%;">
+
+                      <div  class="column" *ngFor="let item of listcomposition_product" >
+                        <div class="product-item">
+                            <div class="product-image" style="border-radius: 10px;">
+                                <a href="product-detail.html">
+                                  <span class="badge rounded-pill  badge-notification" style="margin-left: 5%;margin-top: 5%; width: 16%;height: 20%; background-color: red; " *ngIf ="item.discount != 0 "> {{item.discount}}%</span>
+                                  <span class="badge rounded-pill  badge-notification" style="margin-left: 5%;margin-top: 5%; background-color: rgb(231, 180, 121);color: white; ">New</span>
+                                    <img src="./assets/img/imgdatn/{{item.image}}" alt="Product Image">
+                                </a>     
+                                <div class="product-action">
+                                    <a (click)="Dialog_giohang(item)"><i class="fa fa-cart-plus"></i></a>
+                                    <a (click)="product_yeuthich(item)"><i class="fa fa-heart"></i></a>
+                                    <a [routerLink]="['/productdetail']"  [queryParams]="{id: item.id}"><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+      
+                        <div style="text-align: center; margin-top: 15px;">
+                          
+                            <div class="product-title"   >
+                              <a href="#"  style="color: black;">{{item.nameproduct}}</a>
+                              
+                            </div>
+                            <div class="product-price" style="padding-top: 15px;" *ngIf="item.discount == 0">
+                              <h3><b>{{item.price}}</b></h3>
+                            </div>
+                            <div class="product-price" style="padding-top: 15px;" *ngIf="item.discount != 0">
+                              <del><h3><b>{{item.price}}</b></h3></del>
+                              <h3 style="color: red;"><b>{{item.price-(item.price * item.discount/100)}}</b></h3>
+                            </div>
+                            <div class="ratting">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                          </div>
+                        </div>
+                      </div> 
+  
+  
+                
+                    </div> 
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div >
+    <!-- <button type="button" class="btn btn-light btn-rounded button-TKtatca" routerLink="/productlist">XEM TẤT CẢ</button> -->
+  
+    <nav aria-label="Page navigation example" style="margin-left: 33%;">
+      <ul class="pagination pagination-circle pg-blue">
+        <li class="page-item disabled"><a class="page-link">First</a></li>
+        <li class="page-item disabled">
+          <a class="page-link" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item active"><a class="page-link">1</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item"><a class="page-link">4</a></li>
+        <li class="page-item"><a class="page-link">5</a></li>
+        <li class="page-item">
+          <a class="page-link" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link">Last</a></li>
+      </ul>
+    </nav>
+  
+  
+  </div>

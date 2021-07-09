@@ -1,0 +1,73 @@
+.column_div{
+
+    column-count: 4;
+    column-gap: 1%;
+    column-width: 50%;
+}
+.column_navsp{
+  column-count: 3;
+    column-gap: 1%;
+}
+.column2 {
+  float: left;
+  width: fit-content;
+}
+
+
+.column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear float khác sau các cột */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Bố cục linh hoạt: ba cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình 
+  có chiều rộng dưới 600px */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+  .banner-image{
+    width: 100%;
+    height: 200px;
+  }
+
+  .button-TKtatca{
+    margin-left: 35%;
+      margin-top: 3%;
+     background-color: rgb(188, 206, 251);
+     border-radius: 15px;
+     padding-left: 20px;
+     padding-right: 20px;
+     color: white;
+  }
+  .search-danhmuc{
+    
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: aliceblue;
+}
+
+li  :hover{
+  color: rgb(231, 175, 111);
+}
+
+a  :hover {
+  color: black;
+}
+
+.sp_hover  :hover{
+  color:rgb(231, 175, 111) ;  
+}
+
+.color{
+  color: black;
+}

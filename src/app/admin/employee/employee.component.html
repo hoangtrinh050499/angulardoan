@@ -1,0 +1,144 @@
+<!-- Table with panel -->
+<div style="height: 550px;" class="card card-cascade narrower">
+
+    <!--Card image-->
+    <div id="table_color"
+      class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+  
+      <!-- <div>
+        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+          <i class="fas fa-th-large mt-0"></i>
+        </button>
+        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+          <i class="fas fa-columns mt-0"></i>
+        </button>
+      </div> -->
+
+      <!-- <div class="btn-outline-white btn-rounded btn-sm px-2">
+        <input style="width: 160px; border: 0px; border-right: 0px;" type="text" placeholder="Nhập tên nhân viên ..." aria-label="Search" [(ngModel)] = "lastname" (input)="Search()">
+
+        <button  type="button" style="color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+        </button>
+        </div> -->
+
+        <div class="">
+          <input style="width: 200px;" type="text" placeholder="Nhập tên nhân viên ..." aria-label="Search" [(ngModel)] = "lastname" (input)="Search()">
+          <button type="button" style="color: black;background-color: white; ">
+            <i class="fas fa-search" style="font-size: 15px; color: black;"></i>
+          </button>
+          </div>
+    
+  
+          <span style="color: white; margin-left: 0px;">Danh sách nhân viên</span>
+      
+  
+      <div style="margin-right: 5%;">
+        <!-- <button style="color: white;" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" (click) ="this.openDialog()" >
+            <a style="font-size: 20px;">+</a>
+          </button> -->
+        <!-- <button style="color: white;" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" (click) ="this.openDialog()">
+          <i class="fas fa-pencil-alt mt-0"></i>
+        </button>
+        <button style="color: white;" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" (click)="this.delete()">
+          <i class="far fa-trash-alt mt-0"></i>
+        </button> -->
+
+        <button style="color: white; background-color: darkblue;border-radius: 50%; border-color: white;margin-right: 5px;" type="button" class="cn btn-outline-white btn-rounded btn-sm px-2" (click)="this.openDialog()">
+          <i class="fas fa-pencil-alt mt-0"></i>
+        </button>
+        <button style="color: white; background-color: darkblue;border-radius: 50%; border-color: white;margin-right: 5px;" type="button" class="cn btn-outline-white btn-rounded btn-sm px-2" (click)="this.delete()">
+          <i class="far fa-trash-alt mt-0"></i>
+        </button>
+
+
+      </div>
+  
+    </div>
+    <!--/Card image--
+
+
+  
+    <div class="px-4  products-table">
+  
+      <div class="table-wrapper ">
+        <!--Table-->
+        <table class="table table-hover mb-0">
+  
+          <!--Table head-->
+          <thead>
+            <tr>
+                <th class="th-lg">
+                    <a href="">Mã
+                      <!-- <i class="fas fa-sort ml-1"></i> -->
+                    </a>
+                  </th>
+
+                  <th class="th-lg">
+                    <a href="">Ảnh
+                      <!-- <i class="fas fa-sort ml-1"></i> -->
+                    </a>
+                  </th>
+
+              <th class="th-lg">
+                <a href="">Họ 
+                  <!-- <i class="fas fa-sort ml-1"></i> -->
+                </a>
+              </th>
+              <th class="th-lg">
+                <a href="">Tên
+                  <!-- <i class="fas fa-sort ml-1"></i> -->
+                </a>
+              </th>
+              <th class="th-lg">
+                <a href="">Ngày sinh
+                  <!-- <i class="fas fa-sort ml-1"></i> -->
+                </a>
+              </th>
+              <th class="th-lg">
+                <a href="">Địa chỉ
+                  <!-- <i class="fas fa-sort ml-1"></i> -->
+                </a>
+              </th>
+              <th class="th-lg">
+                <a href="">SĐT
+                  <!-- <i class="fas fa-sort ml-1"></i> -->
+                </a>
+              </th>
+              
+            </tr>
+          </thead>
+          <!--Table head-->
+  
+          <!--Table body-->
+          <tbody>
+            <tr class="dropdown" *ngFor=" let item of list" 
+                (click) = 'checkrow(item)'
+                [class.checkrow]="item === this.employee"
+
+            >
+              
+                <td scope="row">{{item.id}}</td>
+                <td><img src="../assets/img/imgemp/{{item?.image}}" alt="" class="img-fluid rounded-circle mb-2" width="55" height="55" />
+                </td>
+                <td>{{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.phone}}</td>
+                <!-- <ul class="dropdown-content sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                  <img />
+              </ul> -->
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
+      </div>
+  
+    <!-- </div>  -->
+<!-- </div> -->
+
+

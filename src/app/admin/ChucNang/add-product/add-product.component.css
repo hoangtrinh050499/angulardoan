@@ -1,0 +1,25 @@
+#dialog_color{
+    background-image: linear-gradient(to right, lightblue, darkblue);
+    color: white;
+    text-align: center;
+    /* height: 20%; */
+}
+
+.image-scrollbar{
+    scrollbar-width: 1px;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: red;
+    border-radius: 5px;
+}
+
+.column{
+    column-count: 2;
+}
+.column1{
+    width: 50%;
+}

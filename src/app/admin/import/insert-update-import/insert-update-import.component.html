@@ -1,0 +1,146 @@
+<div class="row ">
+    <div class="products-table">    
+        <div class="card " >
+            
+            <div class="card-body" style="align-items: center; margin-top: 0;" >
+                
+                <div style="text-align: center; margin-top: 0;">
+                    <h1 class="h3 mb-3">TẠO PHIẾU NHẬP HÀNG</h1>
+                </div>
+                <div class="row">
+                     <mat-form-field appearance="fill" style="width: 50%; ">
+                        <mat-label>Employee</mat-label>
+                        <mat-select 
+                        [(ngModel)]= "this.imp.employee"
+                        >
+                          <mat-option *ngFor="let emp of listemployee" [value]="emp">
+                            <div style="float: left;">{{emp.firstname}} {{emp.lastname}}</div>
+                            <div style="float: right;"><img src="../assets/img/imgemp/{{emp.image}}" alt="" class="img-fluid rounded-circle mb-2" width="40" height="40" /></div>
+                            
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                      <mat-form-field style="width: 45%;" >	
+                        <mat-label>Ngày lập : month/day/year</mat-label>
+                        <input type="text"  matInput [matDatepicker]="picker" name="date" [(ngModel)]="this.imp.date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"  ></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+
+                    
+
+                    <mat-form-field appearance="fill" style="width: 100%;">
+                        <mat-label>Supplier</mat-label>
+                        <mat-select
+                        [(ngModel)]= "this.imp.supplier"
+                        >
+                          <mat-option *ngFor="let sup of listsupplier" [value]="sup">{{sup.namesupplier}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                </div>
+
+                <!-- <hr class="my-4" /> -->
+
+                <div class="row">
+                    <div>
+                        <div class="text-muted">Thông tin sản phẩm</div>
+                        <br/>
+                        <mat-form-field appearance="fill" style="width: 100%; ">
+                            <mat-label>Product</mat-label>
+                            <mat-select
+                            [(ngModel)]="this.importdetail.product"
+                            >
+                              <mat-option *ngFor="let pro of listproduct" [value]="pro">
+                                <div style="float: left; width: 80%;">{{pro.nameproduct}}</div>
+                                <div style="float: right;"><img src="../assets/img/imgdatn/{{pro.image}}" alt="" class="img-fluid rounded-circle mb-2" width="40" height="40" /></div>
+                                
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        
+                       
+                    </div>
+
+                    <div class ="row" [hidden]="hidden">
+                        <mat-form-field style="width: 25%;">	
+                            <mat-label>Nsx : month/day/year</mat-label>
+                            <input type="text" matInput [matDatepicker]="picker1" name="nsx"  [(ngModel)]="this.importdetail.nsx">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker  #picker1 ></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 25%;">	
+                            <mat-label>Exp : month/day/year</mat-label>
+                            <input type="text" matInput [matDatepicker]="picker2" name="exp" [(ngModel)]="this.importdetail.exp">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2 ></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field style="width: 14%;">
+                            <mat-label>Số lượng nhập</mat-label>
+                            <input type="text" matInput name="sln" [(ngModel)]="this.importdetail.quantityimport">
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 14%;">	
+                            <mat-label>Giá nhập</mat-label>
+                            <input type="text" matInput name="gianhap" [(ngModel)]="this.importdetail.unitpriceimport">
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 14%;">	
+                            <mat-label>Giá bán</mat-label>
+                            <input type="text" matInput name="giaban" [(ngModel)]="this.importdetail.unitpricesell">
+                        </mat-form-field>
+
+                        <button style="width: 8%;" mat-button (click)="addlistImportdetail()">--></button>
+
+
+                    </div>
+                </div>
+
+
+                
+
+                <div class="products-table">
+                    <table class="table table-sm" >
+                        <thead>
+                            <tr style=" background-color: lightcoral;">
+                                <th>Image</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Ngày sản xuất</th>
+                                <th>HSD</th>
+                                <th>Số lượng nhập</th>
+                                <th>Giá nhập</th>
+                                <th>Giá bán</th>
+                                <th>Thành tiền</th>
+                           
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor = "let item of this.listimportdetail">
+                                <td><img src="../assets/img/imgdatn/{{item.product.image}}" alt="" class="img-fluid rounded-circle mb-2" width="30" height="30" />
+                                </td>
+                                <td>{{item.product.nameproduct}}</td>
+                                <td>{{item.nsx}} </td>
+                                <td>{{item.exp}}</td>
+                                <td>{{item.quantityimport}}</td>
+                                <td class="text-right">{{item.unitpriceimport}}</td>
+                                <td class="text-right">{{item.unitpricesell}}</td>
+                                <td class="text-right">{{item.thanhtien}}</td>   
+                             
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <mat-dialog-actions>
+        <button mat-button mat-mini-fab [mat-dialog-close]="this.imp" cdkFocusInitial (click)="onSubmit()" [routerLink]='["/import"]'>Save</button>
+        <button mat-button (click)= "onCancle()" [routerLink]='["/import"]'>Cancle</button>
+    </mat-dialog-actions>
+</div>
+
+

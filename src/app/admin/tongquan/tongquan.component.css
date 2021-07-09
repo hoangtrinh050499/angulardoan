@@ -1,0 +1,12 @@
+.cntop{
+    border-top: none;
+    border-right: none;
+    border-left: none; 
+    background-color: white;
+    /* border-bottom: none; */
+    
+}
+.onclick {
+    /* border-bottom-style: dashed; */
+    border-bottom-color: red;
+}

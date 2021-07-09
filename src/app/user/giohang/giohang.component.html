@@ -1,0 +1,216 @@
+<div style="height: 100%; margin-bottom: 5%;">
+<h1 style="text-align: center;"><b>Hoàn tất đơn hàng</b></h1>
+<div style=" margin-left: 12%;"><h3><b>Giỏ hàng</b></h3></div>
+<div style="width: 76%; margin-left: 12%; background-color: white;">
+  
+    <div class="table-wrapper ">
+
+      <table class="table table-hover mb-0 ">
+        <thead style="background-color: lightgray;">
+          <tr>
+            <th class="th-lg" style="width: 15%; align-items: center;">
+                <a >
+              
+            
+                </a>
+              </th>
+
+            <th class="th-lg" style="width: 40%; align-items: center;">
+              <a >
+                Tên sản phẩm
+              </a>
+            </th>
+            <th class="th-lg" style="width: fit-content; align-items: center;">
+              <a>
+                Giá
+
+              </a>
+            </th>
+            <th class="th-lg" style=" align-items: center;">
+              <a >
+                Số lượng
+              </a>
+            </th>
+            <th class="th-lg" style="width: fit-content; align-items: center;">
+              <a >
+                Total
+              </a>
+            </th>
+            <th class="th-lg" style="width: 0px; align-items: center;">
+              <a >
+            
+              </a>
+            </th>
+           
+          </tr>
+        </thead>
+        <tbody class="products-table">
+          <tr *ngFor="let item of array ;let i = index"
+          >
+          <td><img src="../assets/img/imgdatn/{{item.pro.image}}" alt="" class="img-fluid rounded-circle mb-2" width="70" height="70" />
+          </td>
+              <td scope="row" style="font-size: 12px;">{{item.pro.nameproduct}}</td>
+              <td style="font-size: 13px;">{{item.pro.price}}</td>
+              
+              <td style="font-size: 13px;">
+                <div >
+                    <button class="btn-minus" style="border: none; background-color: white;" (click)="minus(item)"><i class="fa fa-minus"></i></button>
+                    <input style="text-align: center; width: 15%; border: none;" type="text" value="{{item.sl}}" [(ngModel)] = "this.array[i].sl">
+                    <button class="btn-plus" style="border: none; background-color: white;" (click)="plus(item)"><i class="fa fa-plus"></i></button>
+                </div>
+            </td>
+              <td style="font-size: 13px;align-items: center;">{{item.sl*item.pro.price}}</td>
+              
+              <td style="font-size: 13px; align-items: center;" >
+
+                <i class="fas fa-times" (click)="delete(i)"></i>
+                
+              </td>
+
+              
+             
+          </tr>
+          <tr>
+            <td>
+            </td>
+                <td scope="row" style="font-size: 12px;"></td>
+                <td style="font-size: 13px;"></td>
+                
+                <td style="font-size: 13px;"><b>Tổng tiền</b></td>
+                <td style="font-size: 13px;align-items: center;"><b>{{this.sum}}</b></td>
+                
+                <td style="font-size: 13px; align-items: center;"></td>
+            </tr>
+          
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+
+      
+
+    </div>
+
+  </div>
+  <br/>
+  <div style="margin-top: 1%;width: 76%; margin-left: 12%;">
+    <button style="width: 20%;float: left; background-color: black; color: white;" routerLink="/hnskincare.vn"><i class="fas fa-long-arrow-alt-left" style="color: white;"></i> Tiếp tục mua hàng</button>
+    <button style="width: 20%;float: right;" (click)="deleteall()">Xóa tất cả</button>
+  </div>
+
+  <div class="row column_count" style="height: 500px; width: 76%; margin-left: 12%; margin-top: 5%;">
+    <div class="column" style="margin-left: 0%;">
+        <div ><h2>Thông tin giao hàng</h2></div>
+        <div style="margin-left: 1%;">
+            
+            <mat-form-field  style="width: 100%;">
+                <mat-label>Họ tên</mat-label>
+                <input matInput name="hoten" [(ngModel)]="this.cusdto.name">
+            </mat-form-field>
+
+            <div class="row column_count">
+
+                <div style="width: 60%;">
+                    <mat-form-field  style="width: 100%;">
+                        <mat-label>Email</mat-label>
+                        <input matInput name="email" [(ngModel)]="this.cusdto.email">
+                    </mat-form-field>
+                </div>
+
+                <div  style="width: 35%; margin-left: 5%;">
+                    <mat-form-field  style="width: 100%;">
+                        <mat-label>Số điện thoại</mat-label>
+                        <input matInput name="sdt" [(ngModel)]="this.cusdto.phone">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <mat-form-field  style="width: 100%;">
+                <mat-label>Địa chỉ</mat-label>
+                <input matInput name="address" [(ngModel)]="this.cusdto.address">
+            </mat-form-field>
+
+            <mat-form-field  style="width: 100%;">
+                <mat-label>Tỉnh/Thành phố</mat-label>
+                <input matInput name="tinhthanhpho">
+            </mat-form-field>
+
+            <div class="row column_count">
+                
+                <div style="width: 60%;">
+                    <mat-form-field  style="width: 100%;">
+                        <mat-label>Quận/Huyện</mat-label>
+                        <input matInput name="quanhuyen">
+                    </mat-form-field>
+                </div>
+
+                <div  style="width: 35%; margin-left: 5%;">
+                    <mat-form-field  style="width: 100%;">
+                        <mat-label>Phường xã</mat-label>
+                        <input matInput name="phuongxa">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <mat-form-field  style="width: 100%;">
+                <mat-label>Chú thích</mat-label>
+                <input matInput name="status" [(ngModel)]="this.dathang.status">
+            </mat-form-field>
+
+        </div>
+
+        <div ><h2>Phương thức thanh toán</h2></div>
+
+        <div style="margin-left: 1%;">
+           
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Thanh toán tại nhà"  [(ngModel)]="this.dathang.formofpayment"/>
+                <label class="form-check-label" for="flexRadioDefault1" style="color: grey;" > Thanh toán tại nhà </label>
+            </div>
+  
+            <div class="form-check" style="margin-top: 2%;">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Thanh toán trực tuyến" [(ngModel)]="this.dathang.formofpayment" />
+                <label class="form-check-label" for="flexRadioDefault1" style="color: grey;" > Thanh toán trực tuyến </label>
+            </div>
+ 
+        </div>
+
+    </div>
+    <div class="column" >
+        <div>
+            <table class="table table-hover mb-0 " style="background-color: lightgray; margin-top: 3%; width: 70%; float: right;" >
+            <tbody class="products-table">
+              <tr>
+     
+                    <td scope="row" style="font-size: 14px;"><b>Tạm tính</b></td>
+                    <td style="font-size: 13px;text-align: right;"><b>{{this.sum}}</b></td>
+                </tr>
+                <tr>
+     
+                    <td scope="row" style="font-size: 14px;"><b>Phí vận chuyển</b></td>
+                    <td style="font-size: 13px; text-align: right;"></td>
+                </tr>
+                <tr>
+     
+                    <td scope="row" style="font-size: 14px;"><b>Total</b></td>
+                    <td style="font-size: 13px;text-align: right;"><b>{{this.sum}}</b></td>
+                </tr>
+              
+            </tbody>
+            <!--Table body-->
+          </table></div>
+
+          <div >
+              <button style="background-color: black; margin-top: 3%; width: 70%; float: right; color: white; height: 50px;" (click)="order()">Thanh toán</button>
+          </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+  
